@@ -6,7 +6,7 @@
 /*   By: anastasiya <anastasiya@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 15:46:20 by anastasiya        #+#    #+#             */
-/*   Updated: 2025/05/25 10:41:06 by anastasiya       ###   ########.fr       */
+/*   Updated: 2025/05/25 10:42:49 by anastasiya       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@
     
 // }
 
-#include "so_long"
+#include "../include/so_long.h"
 
 int main(int argc, char **argv)
 {

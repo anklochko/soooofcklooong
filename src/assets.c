@@ -6,11 +6,11 @@
 /*   By: anastasiya <anastasiya@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 16:53:47 by anastasiya        #+#    #+#             */
-/*   Updated: 2025/05/22 17:16:12 by anastasiya       ###   ########.fr       */
+/*   Updated: 2025/05/25 11:04:20 by anastasiya       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 #include <stdlib.h>  //exit
 
 static void exit_error(const char *msg) //вывод ошибки в 1 или 0 завершить программу

@@ -6,11 +6,11 @@
 /*   By: anastasiya <anastasiya@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 15:46:28 by anastasiya        #+#    #+#             */
-/*   Updated: 2025/05/25 10:33:19 by anastasiya       ###   ########.fr       */
+/*   Updated: 2025/05/25 11:06:48 by anastasiya       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 // Статическая выбирает нужное изображение и рисует его
 static void draw_pxl(t_game *game, int y, int x)

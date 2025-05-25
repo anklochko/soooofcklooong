@@ -6,7 +6,7 @@
 /*   By: anastasiya <anastasiya@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/18 15:06:40 by anastasiya        #+#    #+#             */
-/*   Updated: 2025/05/25 10:07:01 by anastasiya       ###   ########.fr       */
+/*   Updated: 2025/05/25 11:13:27 by anastasiya       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,17 @@
 
 # define MSGES
 
+typedef struct  s_assets
+{
+    void    *wall;
+    void    *background;
+    void    *player;
+    void    *coin;
+    void    *exit;
+    int     images_size;     
+    int     img_w;
+    int     img_h;
+}               t_assets;
 
 typedef struct  s_map
 {
@@ -49,16 +60,7 @@ typedef struct  s_game
     int     moves;         
 }               t_game;
 
-typedef struct  s_assets
-{
-    void    *wall;
-    void    *background;
-    void    *player;
-    void    *coin;
-    void    *exit;
-    int     images_size;     
-    int     img_w;
-    int     img_h;
-}               t_assets;
+void init_assets(t_game *game);
+void render_map(t_game *game);
 
 #endif

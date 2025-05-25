@@ -56,10 +56,10 @@
 
 NAME    = so_long
 CC      = cc
-CFLAGS  = -Wall -Wextra -Werror
+CFLAGS  = -Wall -Wextra -Werror -Wno-deprecated-declarations
 
-SRC     = main.c src/*.c
-OBJS    = $(SRC:.c=.o)
+SRCS = main.c $(wildcard src/*.c)
+OBJS = $(SRCS:.c=.o)
 
 MLX_DIR = mlx
 MLX_LIB = $(MLX_DIR)/libmlx.a
@@ -68,7 +68,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@$(MAKE) -C $(MLX_DIR)
-	$(CC) $(CFLAGS) $(OBJS) $(MLX_LIB) \
+	$(CC) $(CFLAGS) $(OBJS) $(MLX_LIB) libft/libft.a \
 	    -framework OpenGL -framework AppKit -o $(NAME)
 
 %.o: %.c

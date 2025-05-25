@@ -6,7 +6,7 @@
 /*   By: anastasiya <anastasiya@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/18 15:06:40 by anastasiya        #+#    #+#             */
-/*   Updated: 2025/05/22 17:11:15 by anastasiya       ###   ########.fr       */
+/*   Updated: 2025/05/25 10:07:01 by anastasiya       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ typedef struct  s_assets
     void    *player;
     void    *coin;
     void    *exit;
-    int     images_size;      //  whaaaat?? |
+    int     images_size;     
     int     img_w;
     int     img_h;
 }               t_assets;

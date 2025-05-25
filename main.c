@@ -6,7 +6,7 @@
 /*   By: anastasiya <anastasiya@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 15:46:20 by anastasiya        #+#    #+#             */
-/*   Updated: 2025/05/22 16:59:33 by anastasiya       ###   ########.fr       */
+/*   Updated: 2025/05/25 09:55:35 by anastasiya       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,8 @@
 //Подключи MiniLibX и отобрази каждый символ картинкой на экране
 //Реализуй двuжение по клавишам: WASD или стрелки
 //Добавь счётчик ходов в консоль
-
-
 //create a window using MiniLibX
 //Create the required structure to store all the necessary information
-
-
 
 int main()
 {

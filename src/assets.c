@@ -6,7 +6,7 @@
 /*   By: anastasiya <anastasiya@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 16:53:47 by anastasiya        #+#    #+#             */
-/*   Updated: 2025/05/25 11:04:20 by anastasiya       ###   ########.fr       */
+/*   Updated: 2025/05/25 12:05:48 by anastasiya       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,24 @@ why  assets.images?     -->     1) у нас есть тип данных в ф�
 */
 void    init_assets(t_game *game)
 {
-    game->assets.images_size =  IMG_SIZE;
-    game->assets.wall        =  mlx_xpm_file_to_image(game->mlx, WALL_IMG, &game->assets.img_w, &game->assets.img_h);
-    game->assets.background  =  mlx_xpm_file_to_image(game->mlx, BACKGROUND_IMG, &game->assets.img_h, &game->assets.img_h);
-    game->assets.player      =  mlx_xpm_file_to_image(game->mlx, PLAYER_IMG, &game->assets.img_h, &game->assets.img_h);
-    game->assets.coin        =  mlx_xpm_file_to_image(game->mlx, COIN_IMG, &game->assets.img_h, &game->assets.img_h);
-    game->assets.exit        =  mlx_xpm_file_to_image(game->mlx, EXIT_IMG, &game->assets.img_h, &game->assets.img_h);
-    if (!game->assets.wall) 
+    int *w = &game->assets.img_w;
+    int *h = &game->assets.img_h;
+    
+    game->assets.wall        =  mlx_xpm_file_to_image(game->mlx, WALL_IMG, w, h);
+    if (!game->assets.wall || *w == 0 || *h == 0) 
         exit_error(WALL_XPM_ERR "\n");
-    if (!game->assets.background)
+    game->assets.background  =  mlx_xpm_file_to_image(game->mlx, BACKGROUND_IMG, w, h);
+    if (!game->assets.background || *w == 0 || *h == 0)
         exit_error(BACKGROUND_XPM_ERR "\n");
-    if (!game->assets.player)
+    game->assets.player      =  mlx_xpm_file_to_image(game->mlx, PLAYER_IMG, w, h);
+    if (!game->assets.player || *w == 0 || *h == 0)
         exit_error(PLAYER_XPM_ERR "\n");
-    if (!game->assets.coin)
+    game->assets.coin        =  mlx_xpm_file_to_image(game->mlx, COIN_IMG, w, h);
+    if (!game->assets.coin || *w == 0 || *h == 0)
         exit_error(COIN_XPM_ERR "\n");
-    if (!game->assets.exit)
+    game->assets.exit        =  mlx_xpm_file_to_image(game->mlx, EXIT_IMG, w, h);
+    if (!game->assets.exit || *w == 0 || *h == 0)
         exit_error(EXIT_XPM_ERR "\n");
+    printf("Sprite wall: %d×%d\n", *w, *h);
+    game->assets.images_size =  IMG_SIZE;
 }

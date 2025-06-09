@@ -6,7 +6,7 @@
 /*   By: anastasiya <anastasiya@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 15:46:20 by anastasiya        #+#    #+#             */
-/*   Updated: 2025/05/25 11:18:34 by anastasiya       ###   ########.fr       */
+/*   Updated: 2025/05/25 12:03:16 by anastasiya       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,40 +34,33 @@
 // }
 
 #include "../include/so_long.h"
+#include "../include/so_long.h"
 
 int main(int argc, char **argv)
 {
-    (void)argc;
-    (void)argv;
     t_game game;
-
-    // … твоя валидация аргументов, чтение карты …
+    if (argc != 2)
+        exit_error(INVALID_NBR_ARGS "\n");
+    parse_map(argv[1], &game.map);
+    validate_map(&game.map);
 
     game.mlx = mlx_init();
     if (!game.mlx)
-        printf(MLX_INIT_ERR "\n");
+        exit_error(MLX_INIT_ERR "\n");
     game.win = mlx_new_window(
         game.mlx,
         game.map.cols * IMG_SIZE,
         game.map.rows * IMG_SIZE,
         "so_long"
     );
-    mlx_pixel_put(game.mlx, game.win, 0, 0, 0x00FF00);      // зелёная точка в (0,0)
-    mlx_pixel_put(game.mlx, game.win, IMG_SIZE, IMG_SIZE, 0xFF0000); // красная в (64,64)
-
     if (!game.win)
-        printf(MLX_NEW_WINDOW_ERR "\n");
-
-    // тестируем пиксель — если точка на месте, значит MLX OK
-    mlx_pixel_put(game.mlx, game.win, 0, 0, 0x00FF00);
-    mlx_pixel_put(game.mlx, game.win, IMG_SIZE, IMG_SIZE, 0xFF0000);
+        exit_error(MLX_NEW_WINDOW_ERR "\n");
 
     init_assets(&game);
     render_map(&game);
 
-    // … хуки и цикл
-    mlx_hook(game.win, 2, 1L<<0, mlx_hook, &game);
-    mlx_hook(game.win, 17, 1L<<17, mlx_hook, &game);
+    mlx_key_hook(game.win, key_hook, &game);
+    mlx_hook    (game.win, 17, 0, close_hook, &game);
     mlx_loop(game.mlx);
     return (0);
 }

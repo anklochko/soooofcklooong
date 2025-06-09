@@ -6,7 +6,7 @@
 /*   By: anastasiya <anastasiya@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 15:46:28 by anastasiya        #+#    #+#             */
-/*   Updated: 2025/05/25 11:06:48 by anastasiya       ###   ########.fr       */
+/*   Updated: 2025/05/25 11:53:33 by anastasiya       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,10 @@ void render_map(t_game *game)
     {
         x = 0;
         while(x < game->map.cols)
-            draw_pxl(game, y, x++);
+        {
+            draw_pxl(game, y, x);
+            x++;
+        }
         y++;
     }
 }

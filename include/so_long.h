@@ -6,7 +6,7 @@
 /*   By: anastasiya <anastasiya@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/18 15:06:40 by anastasiya        #+#    #+#             */
-/*   Updated: 2025/05/25 11:13:27 by anastasiya       ###   ########.fr       */
+/*   Updated: 2025/05/25 12:17:27 by anastasiya       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include "keys.h"
 #include "error_msg.h"
 #include "get_next_line.h"
+#include "libft.h"
 #include "../mlx/mlx.h"
 
 # define OPEN_SPACE "0"

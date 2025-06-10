@@ -6,7 +6,7 @@
 /*   By: anastasiya <anastasiya@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 16:53:47 by anastasiya        #+#    #+#             */
-/*   Updated: 2025/05/25 12:05:48 by anastasiya       ###   ########.fr       */
+/*   Updated: 2025/06/10 16:32:01 by anastasiya       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ static void exit_error(const char *msg) //вывод ошибки в 1 или 0 
     write(STDERR_FILENO, msg, ft_strlen(msg));
     exit(EXIT_FAILURE);
 }
-
 /*          init_assets              в .h файле game — это указатель на t_game.
 why  assets.images?     -->     1) у нас есть тип данных в функции t_game 
                                 2) в самой структуре t_gama есть assets типа t_assets

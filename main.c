@@ -6,7 +6,7 @@
 /*   By: anastasiya <anastasiya@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 15:46:20 by anastasiya        #+#    #+#             */
-/*   Updated: 2025/05/25 12:03:16 by anastasiya       ###   ########.fr       */
+/*   Updated: 2025/06/10 16:41:02 by anastasiya       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,9 @@ int main(int argc, char **argv)
         game.mlx,
         game.map.cols * IMG_SIZE,
         game.map.rows * IMG_SIZE,
-        "so_long"
-    );
+        "so_long");
     if (!game.win)
         exit_error(MLX_NEW_WINDOW_ERR "\n");
-
     init_assets(&game);
     render_map(&game);
 

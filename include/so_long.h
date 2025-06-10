@@ -6,7 +6,7 @@
 /*   By: anastasiya <anastasiya@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/18 15:06:40 by anastasiya        #+#    #+#             */
-/*   Updated: 2025/05/25 12:17:27 by anastasiya       ###   ########.fr       */
+/*   Updated: 2025/06/10 17:17:25 by anastasiya       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,7 @@ typedef struct  s_game
 
 void init_assets(t_game *game);
 void render_map(t_game *game);
+static void exit_error(const char *msg);
+int parse_map(int file_path);
 
 #endif

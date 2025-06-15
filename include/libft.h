@@ -6,7 +6,7 @@
 /*   By: anastasiya <anastasiya@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:48:33 by pkieszek          #+#    #+#             */
-/*   Updated: 2025/05/25 11:22:58 by anastasiya       ###   ########.fr       */
+/*   Updated: 2025/06/10 17:35:05 by anastasiya       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ int			ft_isprint(int c);
 int			ft_toupper(int c);
 int			ft_tolower(int c);
 size_t		ft_strlen(const char *s);
-size_t		ft_strlcpy(char *dest, const char *src, size_t size);
+//size_t		ft_strlcpy(char *dest, const char *src, size_t size);
 size_t		ft_strlcat(char *dest, const char *src, size_t n);
 int			ft_strncmp(const char *str1, const char *str2, size_t n);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char		*ft_strchr(const char *str, int c);
 char		*ft_strrchr(const char *s, int c);
-char		*ft_strdup(const char *s);
+//char		*ft_strdup(const char *s);
 int			ft_atoi(const char *str);
 void		ft_bzero(void *s, size_t len);
 int			ft_memcmp(const void *s1, const void *s2, size_t n);

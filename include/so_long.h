@@ -6,7 +6,7 @@
 /*   By: anastasiya <anastasiya@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/18 15:06:40 by anastasiya        #+#    #+#             */
-/*   Updated: 2025/06/10 17:17:25 by anastasiya       ###   ########.fr       */
+/*   Updated: 2025/06/15 12:29:25 by anastasiya       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@
 #include "asset.h"
 #include "keys.h"
 #include "error_msg.h"
+#include <fcntl.h>
 #include "get_next_line.h"
 #include "libft.h"
 #include "../mlx/mlx.h"
+#include "../ft_printf/ft_printf.h"
 
 # define OPEN_SPACE "0"
 # define WALL "1"
@@ -42,13 +44,16 @@ typedef struct  s_assets
 
 typedef struct  s_map
 {
-    char    **map;        
+    char    **map;  //type grid? то есть массив строк где каждая строка это одна строка карты      
     int     rows;
-    int     cols;
+    int     cols;	
     int     collectibles;
-    int     exit;
+    t_point exit;
     int     player;
     t_point player_pos;
+    char	        *str; // тут начинается временное хранение карты, строка карты
+	int		        index;	 // ее нр
+	struct s_map	*next; // ну и типа поинтер к след линкед листу? хотя блин это можно тут делать или нет?
 }               t_map;
 
 typedef struct  s_game
@@ -64,6 +69,6 @@ typedef struct  s_game
 void init_assets(t_game *game);
 void render_map(t_game *game);
 static void exit_error(const char *msg);
-int parse_map(int file_path);
+int parse_map(const char *file_path);
 
 #endif

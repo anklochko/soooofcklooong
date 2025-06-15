@@ -6,7 +6,7 @@
 /*   By: anastasiya <anastasiya@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 15:46:28 by anastasiya        #+#    #+#             */
-/*   Updated: 2025/06/10 17:23:44 by anastasiya       ###   ########.fr       */
+/*   Updated: 2025/06/10 17:25:46 by anastasiya       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,18 @@ static void draw_pxl(t_game *game, int y, int x)
     mlx_put_image_to_window(game->mlx, game->win, img, x * IMG_SIZE, y * IMG_SIZE);
 }
 
+void put_player_place(t_game *game)
+{
+    char moves_string;
+
+    game->moves += 1;
+    mlx_put_image_to_window(game->mlx, game->win, game->assets.player, IMG_SIZE * game->map.player_pos.x, IMG_SIZE * game->map.player_pos.y);
+    mlx_put_image_to_window(game->mlx, game->win, game->assets.wall, 0, 0);
+    moves_string = ft_itoa(game->moves);
+    mlx_string_put(game->mlx, game->win, 32, 10, 1, moves_string);
+    free(moves_string);
+}
+
 void render_map(t_game *game)
 {
     int y = 0;
@@ -46,15 +58,4 @@ void render_map(t_game *game)
         y++;
     }
     put_player_tile(game);
-}
-void put_player_place(t_game *game)
-{
-    char moves_string;
-
-    game->moves += 1;
-    mlx_put_image_to_window(game->mlx, game->win, game->assets.player, IMG_SIZE * game->map.player_pos.x, IMG_SIZE * game->map.player_pos.y);
-    mlx_put_image_to_window(game->mlx, game->win, game->assets.wall, 0, 0);
-    moves_string = ft_itoa(game->moves);
-    mlx_string_put(game->mlx, game->win, 32, 10, 1, moves_string);
-    free(moves_string);
 }
